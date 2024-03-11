@@ -25,7 +25,7 @@ db = DatabaseConnection(
     password="tranthanhson",
     database="weather"
 )
-api_key = "a65333f4dbb1e422e7a282439c1a5f70"
+api_key = "YOUR_API_KEY"
 
 # Create the locations and weather tables if they don't exist
 location = Location(db)
