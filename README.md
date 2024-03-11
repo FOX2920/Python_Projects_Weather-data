@@ -53,6 +53,9 @@ python main.py
 
 ## Cấu trúc Dự án
 `connection.py`: Chứa lớp DatabaseConnection để quản lý kết nối cơ sở dữ liệu MySQL.
+
 `weather.py`: Chứa các lớp Location và Weather để tạo và tương tác với các bảng cơ sở dữ liệu tương ứng.
+
 `main.py`: Tập lệnh chính điều khiển quá trình lấy và lưu trữ dữ liệu thời tiết.
+
 `requirements.txt`: Liệt kê các gói Python cần thiết cho dự án.
