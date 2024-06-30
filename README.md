@@ -1,61 +1,64 @@
-# Ứng dụng Dữ liệu Thời tiết
+# Weather Data Collection & MySQL API Integration
 
-Đây là một ứng dụng Python lấy dữ liệu thời tiết cho một thành phố ngẫu nhiên bằng cách sử dụng API OpenWeatherMap và lưu trữ dữ liệu vào cơ sở dữ liệu MySQL.
+This is a Python application that fetches weather data for a random city using the OpenWeatherMap API and stores the data into a MySQL database.
 
-## Yêu cầu
+## Requirements
 
-Trước khi chạy ứng dụng, hãy đảm bảo rằng bạn đã cài đặt:
+Before running the application, make sure you have installed:
 
 - Python 3.x
-- Cơ sở dữ liệu MySQL
+- MySQL Database
 
-## Cài đặt
+## Installation
 
-1. Clone kho lưu trữ:
-```
-git clone https://github.com/FOX2920/Python_Projects_Weather-data-test-.git
-```
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/FOX2920/Python_Projects_Weather-data-test-.git
+    ```
 
-2. Chuyển đến thư mục dự án:
-```
-cd Python_Projects_Weather-data-test-
-```
-3. Cài đặt các gói Python cần thiết:
-```
-pip install -r requirements.txt
-```
-4. Thiết lập cơ sở dữ liệu MySQL:
-Tạo một cơ sở dữ liệu mới có tên weather.
-Mở tệp main.py và cập nhật thông tin kết nối cơ sở dữ liệu với thông tin đăng nhập MySQL của bạn:
-```
-db = DatabaseConnection(
-    host="your_host",
-    username="your_username",
-    password="your_password",
-    database="weather"
-```
-5. Thiết lập khóa API OpenWeatherMap:
-Mở tệp main.py và thay thế "YOUR_API_KEY" bằng khóa API OpenWeatherMap thực tế của bạn.
+2. Navigate to the project directory:
+    ```bash
+    cd Python_Projects_Weather-data-test-
+    ```
 
-## Cách Sử dụng
+3. Install the required Python packages:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Để chạy ứng dụng, hãy thực hiện lệnh sau:
-```
-python main.py
-```
-Ứng dụng sẽ thực hiện các bước sau:
+4. Set up the MySQL database:
+- Create a new database named `weather`.
+- Open the `main.py` file and update the database connection information with your MySQL login details:
+    ```python
+    db = DatabaseConnection(
+        host="your_host",
+        username="your_username",
+        password="your_password",
+        database="weather"
+    )
+    ```
 
-1. Kết nối đến cơ sở dữ liệu MySQL và tạo các bảng cần thiết nếu chúng chưa tồn tại.
-2. Lấy một quốc gia ngẫu nhiên và thủ đô của nó từ API countriesnow.space.
-3. Lấy dữ liệu thời tiết cho thành phố ngẫu nhiên từ API OpenWeatherMap.
-4. Chèn dữ liệu vị trí và thời tiết vào các bảng tương ứng trong cơ sở dữ liệu MySQL.
-5. Đầu ra sẽ hiển thị một thông báo cho biết liệu dữ liệu thời tiết đã được chèn thành công vào cơ sở dữ liệu hay chưa.
+5. Set up the OpenWeatherMap API key:
+- Open the `main.py` file and replace `YOUR_API_KEY` with your actual OpenWeatherMap API key.
 
-## Cấu trúc Dự án
-`connection.py`: Chứa lớp DatabaseConnection để quản lý kết nối cơ sở dữ liệu MySQL.
+## Usage
 
-`weather.py`: Chứa các lớp Location và Weather để tạo và tương tác với các bảng cơ sở dữ liệu tương ứng.
+To run the application, execute the following command:
+    ```bash
+    python main.py
+    ```
 
-`main.py`: Tập lệnh chính điều khiển quá trình lấy và lưu trữ dữ liệu thời tiết.
+The application will perform the following steps:
 
-`requirements.txt`: Liệt kê các gói Python cần thiết cho dự án.
+1. Connect to the MySQL database and create the necessary tables if they do not exist.
+2. Fetch a random country and its capital city from the `countriesnow.space` API.
+3. Retrieve the weather data for the random city from the OpenWeatherMap API.
+4. Insert the location and weather data into the respective tables in the MySQL database.
+5. Output a message indicating whether the weather data was successfully inserted into the database.
+
+## Project Structure
+
+- `connection.py`: Contains the `DatabaseConnection` class to manage MySQL database connections.
+- `weather.py`: Contains the `Location` and `Weather` classes to create and interact with the corresponding database tables.
+- `main.py`: The main script that controls the process of fetching and storing weather data.
+- `requirements.txt`: Lists the Python packages required for the project.
